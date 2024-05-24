@@ -2,10 +2,10 @@ pipeline {
     agent any
     
     environment {
-        TOMCAT_MANAGER_URL = 'http://172.31.200.65:8080/manager/text'
+        TOMCAT_MANAGER_URL = 'http://localhost:8088/manager/text'
         TOMCAT_USERNAME = 'root'
         TOMCAT_PASSWORD = 'root'
-        WAR_FILE = 'PrimeBilling.war'
+        WAR_FILE = 'test.war'
     }
 
     stages {
