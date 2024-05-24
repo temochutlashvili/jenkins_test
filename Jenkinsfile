@@ -18,7 +18,7 @@ pipeline {
         stage('Deploy to Tomcat') {
             steps {
                 script {
-                    def warFilePath = bat(script: 'dir /B /S target\\*.war', returnStdout: true).trim()
+                    def warFilePath = bat(script: 'dir /B /S build\\*.war', returnStdout: true).trim()
                     def curlCommand = "curl -T ${warFilePath} ${TOMCAT_MANAGER_URL}/deploy?path=/${WAR_FILE} -u ${TOMCAT_USERNAME}:${TOMCAT_PASSWORD}"
                     bat "powershell ${curlCommand}"
                 }
